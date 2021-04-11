@@ -1,0 +1,7 @@
+*.wav
+*.aif
+*.DS_Store
+*.icloud
+*.reapeaks
+**/recordings/
+**/samples/
