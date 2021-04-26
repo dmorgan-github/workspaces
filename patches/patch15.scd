@@ -9,7 +9,7 @@ W.setParentEvent( (root: 4, scale:Scale.ritusen) );
 S.uetr.synth({|freq|
 
     var sig = {
-        var sig = SinOscFB.ar(freq, 0.3);
+        var sig = SinOscFB.ar(freq, \fb.kr(0.3));
         sig;
     }.();
 
@@ -96,12 +96,14 @@ S.uetr << [
             Rest(1)
         }
     }.pfunc,
-    rel: Pkey(\octave).linlin(4, 5, 1.5, 1), // Pwhite(1.2, 1.8) * 0.8,
+    rel: Pkey(\octave).linlin(4, 5, 0.5, 1), // Pwhite(1.2, 1.8) * 0.8,
     legato: Pkey(\octave).linlin(4, 5, 0.7, 0.5),
     atk: Pkey(\octave).linlin(4, 5, 0.1, 0.05),
     wet202: 0.4,
     amp: 0.4,
     strum: Pwhite(0, 0.08),
+    fb: Pkey(\octave).linlin(4, 5, 0.5, -0.2),
+    detunehz: Pkey(\octave).linlin(4, 5, 0.6, 1.1)
 ].p
 .stretch(0.5);
 )
@@ -113,7 +115,7 @@ S.uetr.stop;
 
 //s.stopRecording
 (
-App.recAtCommit.("b4f8e6");
+App.recAtCommit.("7c4e94d");
 [
     0 -> {
         S.uetr.play;
