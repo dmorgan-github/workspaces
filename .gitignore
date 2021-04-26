@@ -3,5 +3,11 @@
 *.DS_Store
 *.icloud
 *.reapeaks
+*.bwproject
+*.png
+*bitwig*
 **/recordings/
 **/samples/
+**/images/
+**/bitwig/
+**/bounce/
