@@ -9,9 +9,7 @@ W.setParentEvent( (root: 4, scale:Scale.ritusen) );
 S.uetr.synth({|freq|
 
     var sig = {
-        //var sig = SinOsc.ar(freq);
         var sig = SinOscFB.ar(freq, 0.3);
-        //sig = sig.blend(Satan.ar(sig, \satandecay.kr(30).linlin(0, 1, 2, 30)), \dist.kr(0.13));
         sig;
     }.();
 
@@ -112,7 +110,10 @@ S.uetr.node.play;
 S.uetr.play;
 S.uetr.stop;
 
+
+//s.stopRecording
 (
+App.recAtCommit.("b4f8e6");
 [
     0 -> {
         S.uetr.play;
